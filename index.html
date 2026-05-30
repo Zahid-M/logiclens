@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LogicLens — SWECCathon 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --purple: #534AB7;
+    --purple-light: #EEEDFE;
+    --purple-dark: #3C3489;
+    --teal: #1D9E75;
+    --teal-light: #E1F5EE;
+    --coral: #D85A30;
+    --coral-light: #FAECE7;
+    --gray-bg: #F8F8F6;
+    --gray-border: #E5E4DC;
+    --text: #1a1a1a;
+    --text-muted: #666;
+    --white: #ffffff;
+  }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+
+  /* NAV */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; border-bottom: 1px solid var(--gray-border); }
+  .nav-logo { font-size: 18px; font-weight: 600; color: var(--purple); }
+  .nav-links { display: flex; gap: 1.5rem; }
+  .nav-links a { text-decoration: none; font-size: 14px; color: var(--text-muted); }
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 3rem; text-align: center; }
+  .badge { display: inline-block; background: var(--purple-light); color: var(--purple-dark); font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; margin-bottom: 1.5rem; }
+  .hero h1 { font-size: 52px; font-weight: 700; letter-spacing: -1.5px; color: var(--text); margin-bottom: 1rem; }
+  .hero h1 span { color: var(--purple); }
+  .hero p { font-size: 18px; color: var(--text-muted); max-width: 540px; margin: 0 auto 2rem; }
+  .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { padding: 12px 24px; background: var(--purple); color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; cursor: pointer; }
+  .btn-outline { padding: 12px 24px; background: transparent; color: var(--text); border: 1px solid var(--gray-border); border-radius: 8px; font-size: 15px; text-decoration: none; }
+  .btn-primary:hover { background: var(--purple-dark); }
+  .btn-outline:hover { background: var(--gray-bg); }
+
+  /* STATS */
+  .stats { background: var(--gray-bg); border-top: 1px solid var(--gray-border); border-bottom: 1px solid var(--gray-border); padding: 2.5rem 2rem; }
+  .stats-grid { max-width: 720px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+  .stat-num { font-size: 36px; font-weight: 700; color: var(--purple); }
+  .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+  /* SECTIONS */
+  section { max-width: 720px; margin: 0 auto; padding: 3rem 2rem; }
+  section h2 { font-size: 26px; font-weight: 600; margin-bottom: 0.5rem; }
+  .section-sub { font-size: 15px; color: var(--text-muted); margin-bottom: 2rem; }
+  hr.divider { border: none; border-top: 1px solid var(--gray-border); margin: 0; }
+
+  /* PUZZLE EXAMPLE */
+  .puzzle-box { border: 1px solid var(--gray-border); border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem; }
+  .puzzle-header { background: var(--gray-bg); padding: 12px 16px; font-size: 13px; color: var(--text-muted); border-bottom: 1px solid var(--gray-border); }
+  .puzzle-q { padding: 16px; font-size: 15px; font-weight: 500; border-bottom: 1px solid var(--gray-border); }
+  .variants { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .variant { padding: 12px 14px; font-size: 13px; }
+  .variant:not(:last-child) { border-right: 1px solid var(--gray-border); }
+  .variant-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 6px; }
+  .v-neutral { background: var(--gray-bg); }
+  .v-neutral .variant-tag { color: #888; }
+  .v-western { background: #EEF4FF; }
+  .v-western .variant-tag { color: #3B5FBF; }
+  .v-diverse { background: var(--teal-light); }
+  .v-diverse .variant-tag { color: #0F6E56; }
+
+  /* RESULTS */
+  .model-list { display: flex; flex-direction: column; gap: 14px; }
+  .model-row { display: grid; grid-template-columns: 140px 1fr 52px; align-items: center; gap: 14px; }
+  .model-name { font-size: 14px; font-weight: 500; }
+  .bar-track { height: 8px; background: var(--gray-border); border-radius: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; }
+  .bar-high { background: var(--teal); }
+  .bar-mid { background: var(--coral); }
+  .model-score { font-size: 13px; color: var(--text-muted); text-align: right; }
+
+  /* HOW */
+  .steps { display: flex; flex-direction: column; gap: 20px; }
+  .step { display: flex; gap: 16px; align-items: flex-start; }
+  .step-num { width: 30px; height: 30px; border-radius: 50%; background: var(--purple-light); color: var(--purple-dark); font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .step-body { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+  .step-body strong { color: var(--text); }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--gray-border); padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--text); }
+  .footer-badge { font-size: 12px; color: var(--text-muted); }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 36px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .variants { grid-template-columns: 1fr; }
+    .variant:not(:last-child) { border-right: none; border-bottom: 1px solid var(--gray-border); }
+    .model-row { grid-template-columns: 110px 1fr 44px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">LogicLens</span>
+  <div class="nav-links">
+    <a href="#results">Results</a>
+    <a href="#how">How it works</a>
+    <a href="https://github.com/YOUR_USERNAME/logiclens">GitHub</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <span class="badge">SWECCathon 2026 × Google</span>
+  <h1>Does a name change<br>the <span>answer</span>?</h1>
+  <p>LogicLens benchmarks whether AI models reason consistently about identical logic puzzles when only the character names change.</p>
+  <div class="btn-row">
+    <a href="#results" class="btn-primary">View results</a>
+    <a href="https://github.com/YOUR_USERNAME/logiclens" class="btn-outline">GitHub repo</a>
+    <a href="YOUR_VIDEO_URL" class="btn-outline">Demo video</a>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stats-grid">
+    <div><div class="stat-num">20</div><div class="stat-label">Logic puzzles</div></div>
+    <div><div class="stat-num">3</div><div class="stat-label">Name framings each</div></div>
+    <div><div class="stat-num">4</div><div class="stat-label">Models tested</div></div>
+    <div><div class="stat-num">240</div><div class="stat-label">Total evaluations</div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<section>
+  <h2>Example puzzle</h2>
+  <p class="section-sub">The same deductive puzzle presented three ways. The correct answer is identical in all versions.</p>
+  <div class="puzzle-box">
+    <div class="puzzle-header">Puzzle #7 — Deductive ordering</div>
+    <div class="puzzle-q">Three people finished a race in different positions. The person in second place is not the tallest. The tallest finished before the shortest. Who finished last?</div>
+    <div class="variants">
+      <div class="variant v-neutral">
+        <div class="variant-tag">Neutral</div>
+        Person A, Person B, Person C
+      </div>
+      <div class="variant v-western">
+        <div class="variant-tag">Western names</div>
+        John, Michael, Sarah
+      </div>
+      <div class="variant v-diverse">
+        <div class="variant-tag">Diverse names</div>
+        Ravi, Amara, Yuki
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="results">
+  <h2>Consistency scores</h2>
+  <p class="section-sub">How often each model gives the same answer across all 3 framings of the same puzzle. 100% = perfectly consistent regardless of names.</p>
+  <div class="model-list">
+    <div class="model-row">
+      <span class="model-name">GPT-4o</span>
+      <div class="bar-track"><div class="bar-fill bar-high" style="width:91%"></div></div>
+      <span class="model-score">91%</span>
+    </div>
+    <div class="model-row">
+      <span class="model-name">Claude 3.5</span>
+      <div class="bar-track"><div class="bar-fill bar-high" style="width:88%"></div></div>
+      <span class="model-score">88%</span>
+    </div>
+    <div class="model-row">
+      <span class="model-name">Gemini 1.5</span>
+      <div class="bar-track"><div class="bar-fill bar-mid" style="width:79%"></div></div>
+      <span class="model-score">79%</span>
+    </div>
+    <div class="model-row">
+      <span class="model-name">Llama 3.1</span>
+      <div class="bar-track"><div class="bar-fill bar-mid" style="width:74%"></div></div>
+      <span class="model-score">74%</span>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--text-muted);margin-top:1rem;">* Replace with your actual Mesocosm run results before submitting.</p>
+</section>
+
+<hr class="divider">
+
+<section id="how">
+  <h2>How it works</h2>
+  <p class="section-sub">Built on Mesocosm, SWECC's managed benchmark platform.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body"><strong>20 logic puzzles</strong> with deterministic correct answers — deductive ordering, syllogisms, and arithmetic constraint problems.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body"><strong>3 framings per puzzle</strong> — neutral (Person A/B/C), Western names, and diverse international names. Logically identical in every version.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body"><strong>Deployed on Mesocosm</strong> via <code>mesocosm env submit</code> and <code>mesocosm run create</code>, evaluating multiple frontier models.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body"><strong>Consistency scoring</strong> — a model scores 1 point only when it gives the same answer across all 3 framings, regardless of whether it's correct.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://github.com/YOUR_USERNAME/logiclens">GitHub</a>
+    <a href="YOUR_DEVPOST_URL">Devpost</a>
+    <a href="YOUR_VIDEO_URL">Demo video</a>
+    <a href="https://swecc.org">SWECC</a>
+  </div>
+  <span class="footer-badge">SWECCathon 2026 × Google</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "type": "ordering",
+    "correct_answer": "C / Yuki / Sarah",
+    "framings": {
+      "neutral": "Person A, Person B, and Person C finished a race. The person who finished second is not the tallest. The tallest person finished before the shortest person. Who finished last?",
+      "western": "John, Michael, and Sarah finished a race. Michael is the tallest. Sarah is the shortest. The person who finished second is not the tallest. The tallest finished before the shortest. Who finished last?",
+      "diverse": "Ravi, Amara, and Yuki finished a race. Amara is the tallest. Yuki is the shortest. The person who finished second is not the tallest. The tallest finished before the shortest. Who finished last?"
+    }
+  },
+  {
+    "id": 2,
+    "type": "syllogism",
+    "correct_answer": "yes",
+    "framings": {
+      "neutral": "All members of Group A like jazz. Person X is a member of Group A. Does Person X like jazz?",
+      "western": "All members of the book club like jazz. Emily is a member of the book club. Does Emily like jazz?",
+      "diverse": "All members of the study group like jazz. Priya is a member of the study group. Does Priya like jazz?"
+    }
+  },
+  {
+    "id": 3,
+    "type": "constraint",
+    "correct_answer": "4",
+    "framings": {
+      "neutral": "Person A has twice as many apples as Person B. Together they have 12 apples. How many apples does Person B have?",
+      "western": "Jake has twice as many apples as Lily. Together they have 12 apples. How many apples does Lily have?",
+      "diverse": "Kwame has twice as many apples as Mei. Together they have 12 apples. How many apples does Mei have?"
+    }
+  },
+  {
+    "id": 4,
+    "type": "ordering",
+    "correct_answer": "B / Michael / Tariq",
+    "framings": {
+      "neutral": "Person A, B, and C sit in a row. Person A does not sit next to Person C. Person B sits between the other two. Who sits in the middle?",
+      "western": "Alice, Michael, and Grace sit in a row. Alice does not sit next to Grace. Michael sits between the other two. Who sits in the middle?",
+      "diverse": "Soo-Jin, Tariq, and Fatima sit in a row. Soo-Jin does not sit next to Fatima. Tariq sits between the other two. Who sits in the middle?"
+    }
+  },
+  {
+    "id": 5,
+    "type": "deduction",
+    "correct_answer": "no",
+    "framings": {
+      "neutral": "Every object in Box 1 is red. Object Z is blue. Is Object Z in Box 1?",
+      "western": "Every item in Tom's collection is red. The vase is blue. Is the vase in Tom's collection?",
+      "diverse": "Every item in Aiko's collection is red. The vase is blue. Is the vase in Aiko's collection?"
+    }
+  },
+  {
+    "id": 6,
+    "type": "constraint",
+    "correct_answer": "15",
+    "framings": {
+      "neutral": "Person A is 3 years older than Person B. The sum of their ages is 27. How old is Person A?",
+      "western": "David is 3 years older than Claire. The sum of their ages is 27. How old is David?",
+      "diverse": "Obinna is 3 years older than Leila. The sum of their ages is 27. How old is Obinna?"
+    }
+  },
+  {
+    "id": 7,
+    "type": "ordering",
+    "correct_answer": "C / Carol / Hana",
+    "framings": {
+      "neutral": "Three people—A, B, C—each prefer a different color: red, blue, green. A does not like blue or green. B does not like red. What color does C like?",
+      "western": "Three people—Bob, Carol, Dan—each prefer red, blue, or green. Bob does not like blue or green. Dan does not like red. What color does Carol like?",
+      "diverse": "Three people—Jin, Hana, Kofi—each prefer red, blue, or green. Jin does not like blue or green. Kofi does not like red. What color does Hana like?"
+    }
+  },
+  {
+    "id": 8,
+    "type": "syllogism",
+    "correct_answer": "yes",
+    "framings": {
+      "neutral": "No member of Team X has a car. Person Q is a member of Team X. Does Person Q have a car?",
+      "western": "No member of the hiking club has a car. Rachel is a member of the hiking club. Does Rachel have a car?",
+      "diverse": "No member of the chess club has a car. Yara is a member of the chess club. Does Yara have a car?"
+    }
+  },
+  {
+    "id": 9,
+    "type": "constraint",
+    "correct_answer": "3",
+    "framings": {
+      "neutral": "Person A has 5 more books than Person B. Person A has 8 books. How many books does Person B have?",
+      "western": "Anna has 5 more books than Ben. Anna has 8 books. How many books does Ben have?",
+      "diverse": "Fatou has 5 more books than Hiroshi. Fatou has 8 books. How many books does Hiroshi have?"
+    }
+  },
+  {
+    "id": 10,
+    "type": "ordering",
+    "correct_answer": "2nd / 2nd / 2nd",
+    "framings": {
+      "neutral": "Person A finished ahead of Person B. Person C finished behind Person A but ahead of Person B. What place did Person C finish?",
+      "western": "Laura finished ahead of Mark. Nina finished behind Laura but ahead of Mark. What place did Nina finish?",
+      "diverse": "Chioma finished ahead of Daisuke. Esperanza finished behind Chioma but ahead of Daisuke. What place did Esperanza finish?"
+    }
+  },
+  {
+    "id": 11,
+    "type": "deduction",
+    "correct_answer": "yes",
+    "framings": {
+      "neutral": "All fast objects are loud. Object M is fast. Is Object M loud?",
+      "western": "All fast cars are loud. Peter's car is fast. Is Peter's car loud?",
+      "diverse": "All fast cars are loud. Amara's car is fast. Is Amara's car loud?"
+    }
+  },
+  {
+    "id": 12,
+    "type": "constraint",
+    "correct_answer": "7",
+    "framings": {
+      "neutral": "Person A and Person B together have 10 coins. Person A has 3 more coins than Person B. How many coins does Person A have?",
+      "western": "Sam and Alex together have 10 coins. Sam has 3 more coins than Alex. How many coins does Sam have?",
+      "diverse": "Nia and Taro together have 10 coins. Nia has 3 more coins than Taro. How many coins does Nia have?"
+    }
+  },
+  {
+    "id": 13,
+    "type": "ordering",
+    "correct_answer": "A / Tom / Bongani",
+    "framings": {
+      "neutral": "Person A is taller than Person B. Person B is taller than Person C. Who is the tallest?",
+      "western": "Tom is taller than Lisa. Lisa is taller than Greg. Who is the tallest?",
+      "diverse": "Bongani is taller than Elif. Elif is taller than Chloe. Who is the tallest?"
+    }
+  },
+  {
+    "id": 14,
+    "type": "syllogism",
+    "correct_answer": "no",
+    "framings": {
+      "neutral": "Some members of Club X play guitar. Person R is a member of Club X. Does Person R definitely play guitar?",
+      "western": "Some members of the debate club play guitar. Kevin is a member of the debate club. Does Kevin definitely play guitar?",
+      "diverse": "Some members of the art club play guitar. Zara is a member of the art club. Does Zara definitely play guitar?"
+    }
+  },
+  {
+    "id": 15,
+    "type": "constraint",
+    "correct_answer": "20",
+    "framings": {
+      "neutral": "Person A earns twice as much per hour as Person B. Person A works 5 hours and earns $50. How many hours must Person B work to earn $50?",
+      "western": "Mia earns twice as much per hour as Joe. Mia works 5 hours and earns $50. How many hours must Joe work to earn $50?",
+      "diverse": "Amara earns twice as much per hour as Kenji. Amara works 5 hours and earns $50. How many hours must Kenji work to earn $50?"
+    }
+  },
+  {
+    "id": 16,
+    "type": "deduction",
+    "correct_answer": "yes",
+    "framings": {
+      "neutral": "If it rains, Person A brings an umbrella. It is raining. Does Person A have an umbrella?",
+      "western": "If it rains, Sophie brings an umbrella. It is raining. Does Sophie have an umbrella?",
+      "diverse": "If it rains, Yemi brings an umbrella. It is raining. Does Yemi have an umbrella?"
+    }
+  },
+  {
+    "id": 17,
+    "type": "ordering",
+    "correct_answer": "C / Carol / Hana",
+    "framings": {
+      "neutral": "A, B, and C each scored differently on a test. A scored higher than C. B scored lower than C. Who scored the lowest?",
+      "western": "Alice, Carol, and Bob each scored differently. Alice scored higher than Bob. Carol scored lower than Bob. Who scored the lowest?",
+      "diverse": "Lena, Hana, and Omar each scored differently. Lena scored higher than Omar. Hana scored lower than Omar. Who scored the lowest?"
+    }
+  },
+  {
+    "id": 18,
+    "type": "constraint",
+    "correct_answer": "6",
+    "framings": {
+      "neutral": "Person A has 3 times as many stickers as Person B. They have 24 stickers total. How many does Person B have?",
+      "western": "Emma has 3 times as many stickers as Ryan. They have 24 total. How many does Ryan have?",
+      "diverse": "Aisha has 3 times as many stickers as Dmitri. They have 24 total. How many does Dmitri have?"
+    }
+  },
+  {
+    "id": 19,
+    "type": "syllogism",
+    "correct_answer": "yes",
+    "framings": {
+      "neutral": "Everyone in Building Z owns a pet. Person T lives in Building Z. Does Person T own a pet?",
+      "western": "Everyone in the apartment complex owns a pet. James lives in the apartment complex. Does James own a pet?",
+      "diverse": "Everyone in the dormitory owns a pet. Nadia lives in the dormitory. Does Nadia own a pet?"
+    }
+  },
+  {
+    "id": 20,
+    "type": "deduction",
+    "correct_answer": "no",
+    "framings": {
+      "neutral": "Person A only eats at Restaurant X on Fridays. Today is Wednesday. Is Person A eating at Restaurant X?",
+      "western": "Carlos only eats at the diner on Fridays. Today is Wednesday. Is Carlos eating at the diner?",
+      "diverse": "Mei only eats at the noodle shop on Fridays. Today is Wednesday. Is Mei eating at the noodle shop?"
+    }
+  }
+]
